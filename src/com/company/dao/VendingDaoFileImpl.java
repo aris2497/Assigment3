@@ -8,6 +8,11 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * Implementation of DAO class, responsible for reading and writing data from the file
+ *
+ * @author paulina
+ */
 public class VendingDaoFileImpl implements VendingDao {
 
     private static final File fileName = new File("Products.csv"); //file with DVD
@@ -18,22 +23,28 @@ public class VendingDaoFileImpl implements VendingDao {
         return allProducts;
     }
 
+    /**
+     *  getting product that has been selected by the user
+     *
+     */
+
     @Override
     public Product getProduct(int id) {
         return allProducts.get(id);
     }
 
+    /**
+     * decreasing number of available item after it has been purchased
+     */
     @Override
     public void removeProduct(int id) {
         Product product = allProducts.get(id);
         product.setNumber(product.getNumber() - 1);
-
     }
 
     /**
      * File Reading Logic
      */
-
     public void readProducts() {
 
         try {

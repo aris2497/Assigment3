@@ -10,8 +10,6 @@ public interface UserIO {
 
     int readItemIndex(String prompt, int min, int max);
 
-
-
     String readString(String prompt);
 
     String readMoneyInput(String prompt);

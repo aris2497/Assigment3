@@ -63,7 +63,7 @@ public class VendingConsoleImpl implements UserIO{
                 }
             } catch (NumberFormatException ex){
                 invalidInput = true;
-                Logger.getLogger(VendingDaoFileImpl.class.getName()).log(Level.INFO,
+                Logger.getLogger(VendingConsoleImpl.class.getName()).log(Level.INFO,
                         "Money format exception. Please enter valid amount.");
 
             }
@@ -106,7 +106,9 @@ public class VendingConsoleImpl implements UserIO{
                 Logger.getLogger(VendingDaoFileImpl.class.getName()).log(Level.SEVERE,
                         "NoItemInventoryException");
                 err.howtoRecover(num);
-
+            } catch (NumberFormatException e){
+                Logger.getLogger(VendingDaoFileImpl.class.getName()).log(Level.SEVERE,
+                        "NumberFormatException");
             }
         }
         return num;

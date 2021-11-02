@@ -5,7 +5,6 @@ import com.company.dto.Product;
 import java.util.List;
 
 
-
 public interface VendingDao {
     List<Product> getAllProducts(); //list containing all products, including products where 0 available
     Product getProduct(int id);
